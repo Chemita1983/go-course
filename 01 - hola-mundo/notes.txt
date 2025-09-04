@@ -1,0 +1,22 @@
+Para ejecutar un programa go:
+
+    - go run {archivo.go}
+
+Para compilar un programa go:
+
+    - go build {archivo.go}
+
+esto nos crea un archivo ejecutable con nuestro codigo.
+
+Para inicializar el manejador de modulos:
+
+    - go mod init {nombre}
+
+Para instalar modulos de terceros:
+
+    - go get {nombre del modulo}
+
+esto nos crea el archivo go.mod que contiene información 
+de los módulos importados. Y el archivo go.sum que sirver para verificar
+modulos
+
