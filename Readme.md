@@ -48,3 +48,57 @@ Licensed under the MIT License.
 If you want to connect or talk Go, feel free to reach out!
 
 > Created with 💙 by Chema
+
+
+-------
+
+# 🚀 Curso de Iniciación a Go
+
+¡Bienvenido a mi repositorio del **Curso de Iniciación a Go (Golang)**!  
+Este proyecto documenta mi camino aprendiendo los fundamentos de Go — un lenguaje de programación simple, eficiente y potente creado por Google.
+
+---
+
+## 📘 Sobre Este Proyecto
+
+Este repositorio contiene todo el código, apuntes y pequeños ejercicios que estoy realizando como parte de mi aprendizaje.  
+El objetivo es familiarizarme (y quizás ayudar a otros) con la sintaxis, herramientas y filosofía de Go.
+
+Si tú también estás empezando o tienes curiosidad, ¡siéntete libre de explorar el código!
+
+---
+
+## 🚧 Proyecto en Desarrollo
+
+Estoy trabajando activamente en este curso y actualizando el repositorio de forma regular.  
+¡Pronto habrá más ejemplos y mejoras!
+
+---
+
+## 🛠️ Requisitos
+
+- Go 1.20 o superior  
+- Un editor de código como VSCode (con la extensión de Go)
+
+Descarga Go aquí: [https://go.dev/dl/](https://go.dev/dl/)
+
+---
+
+## 🤝 Contribuciones
+
+Este es un proyecto personal de aprendizaje, pero cualquier sugerencia o feedback es bienvenido.  
+No dudes en abrir un issue o pull request.
+
+---
+
+## 📜 Licencia
+
+Este repositorio está bajo la licencia MIT.
+
+---
+
+## 📫 Contacto
+
+Si quieres conectar o hablar sobre Go, ¡escríbeme!
+
+> Creado con 💙 por Chema
