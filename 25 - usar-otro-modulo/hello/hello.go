@@ -10,11 +10,23 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/Chemita1983/greetings"
 )
 
 func main() {
-	message, _ := greetings.Hello("Chema")
-	fmt.Println(message)
+
+	//message, _ := greetings.Hello("Chema")
+	//mt.Println(message)
+
+	messages, err := greetings.Hellos([]string{"Chema", "Juan", "Maria", "Alba", "Carmen", "Marta", "Jaime"})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for _, message := range messages {
+		fmt.Println(message)
+	}
+
 }
