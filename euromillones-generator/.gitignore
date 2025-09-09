@@ -1,0 +1,39 @@
+# Go binaries and build artifacts
+/bin/
+/obj/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go workspace
+.go/
+
+# Test binary, build, and object files
+*.test
+*.out
+
+# VSCode directory settings
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Go modules and vendor directory
+/vendor/
+
+# IDE and editor folders
+.idea/
+
+# JetBrains IDE specific
+*.iml
+
+# Mac OS specific files
+*.swp
+
+# Node.js modules (if using Go with JS/TS)
+node_modules/
+
+# Log files
+*.log
