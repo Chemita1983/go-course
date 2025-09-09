@@ -3,3 +3,6 @@ Instalar nuestra aplicacion en local
 Con "go install" se compila la aplicación y lo instala dentro de la carpeta bin del gopath 
 para que pueda ser usado desde cualquier parte de nuestro sistema
 
+Instalacion con GITHUB
+
+go get -u {ruta_repo_github}
