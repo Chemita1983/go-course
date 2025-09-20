@@ -1,0 +1,7 @@
+Agregar variables de entorno:
+
+1) Instalamos la dependencia: 
+
+    - go get github.com/joho/godotenv
+
+2) Creamos un archivo .env donde irán nuestras variables de entorno
