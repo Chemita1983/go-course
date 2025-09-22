@@ -15,7 +15,7 @@ func main() {
 
 	// Configura las rutas y sus controladores.
 	router.HandleFunc("/", handlers.Index)
-	router.HandleFunc("/new", handlers.NewGame)
+	router.HandleFunc("/newgame", handlers.NewGame)
 	router.HandleFunc("/game", handlers.Game)
 	router.HandleFunc("/play", handlers.Play)
 	router.HandleFunc("/about", handlers.About)

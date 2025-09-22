@@ -1,0 +1,29 @@
+{{ define "base" }}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ template "title" . }}</title>
+    </head>
+    <body>
+
+        <header>
+            <div>
+                <a href="/">RPS</a>
+            </div>
+            <nav>
+                <a href="/newgame">Nuevo Juego</a>
+                <a href="/about">Acerca de</a>
+            </nav>
+        </header>
+
+        {{ template "content" . }}
+
+        <footer>
+            <h>Creado por Chema &copy; 2025 </h>
+        </footer>
+
+    </body>
+</html>
+{{ end }}
