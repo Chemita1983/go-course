@@ -1,0 +1,37 @@
+Los test unitarios son pruebas automatizadas que se enfocaen en verificar el correcto funcionamiento de unidades
+pequeñas de codigo, como funciones o metodos de una forma aislada.
+
+- Asegura que tu codigo funcione como se espera
+- Facilita la detección de errores al hacer cambios
+- Mejora la mantenibilidad del codigo
+- Permite desarrollar con confianza
+
+COBERTURA DE CODIGO 
+
+- go test -cover 
+
+- go test -coverprofile=coverange.out  -> se genera un archivo con los resultados.
+
+- go tool cover -html=coverange.out -> a partir del archivo generado se muestra la cobertura
+
+OPTIMIZACION DEL CODIGO
+Podemos ver por medio de algunos comandos, que partes de nuestra aplicacion estan tardando mas de la cuenta para
+poder optimizarlas.
+
+ - go test -cpuprofile=cpu.out  -> Nos crea un archivo cpu.out
+
+ - go tool pprof cpu.out
+
+Despues con top, o list {funcion} podemos ver que metodos o funciones estan tardando mas y 
+en que parte del codigo
+
+GRAPHVIZ
+
+https://graphviz.org/download/
+
+Volvemos a ejecutar:
+
+ - go tool pprof cpu.out
+
+Escribiendo "pdf" -> nos genera un pdf con el reporte
+Escribiendo "web" -> nos genera una web con el reporte
