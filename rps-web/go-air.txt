@@ -1,0 +1,15 @@
+https://github.com/air-verse/air
+
+Para debugear y parar el servidor en tiempo real
+
+go install github.com/air-verse/air@latest
+
+air -v
+
+  __    _   ___  
+ / /\  | | | |_) 
+/_/--\ |_| |_| \_ v1.63.0, built with Go go1.25.1
+
+- air init -> genera un archivo de configuración
+
+- air -> arranca el servidor
