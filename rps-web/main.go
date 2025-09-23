@@ -13,6 +13,12 @@ func main() {
 	// Router -> Componente que se encarga de dirigir las solicitudes a los controladores adecuados.
 	router := http.NewServeMux()
 
+	// Servir archivos estáticos (CSS, JS, imágenes) desde el directorio "static".
+	fileStatic := http.FileServer(http.Dir("static/"))
+
+	// Maneja las solicitudes a la ruta "/static/" y sirve los archivos estáticos.
+	router.Handle("/static/", http.StripPrefix("/static/", fileStatic))
+
 	// Configura las rutas y sus controladores.
 	router.HandleFunc("/", handlers.Index)
 	router.HandleFunc("/newgame", handlers.NewGame)
