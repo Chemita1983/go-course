@@ -1,0 +1,7 @@
+Install Mysql driver
+
+go get -u github.com/go-sql-driver/mysql
+
+Install godotenv (Optional)
+
+go get github.com/joho/godotenv
