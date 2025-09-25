@@ -1,0 +1,6 @@
+go get -u github.com/gorilla/mux
+go get github.com/go-sql-driver/mysql
+go get github.com/joho/godotenv
+
+// YAML
+https://github.com/go-yaml/yaml
