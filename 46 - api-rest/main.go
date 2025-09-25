@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/gorilla/mu"
+	"github.com/gorilla/mux"
 )
 
 const PORT = ":8080"
