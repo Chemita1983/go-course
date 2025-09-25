@@ -63,16 +63,21 @@ func TruncateTable(tableName string) {
 
 // Polimorfismo de Exec
 func Exec(query string, args ...any) (sql.Result, error) {
+	Connect()
 	result, err := db.Exec(query, args...)
+	Close()
 	if err != nil {
 		log.Println("Error: ", err)
 	}
+
 	return result, err
 }
 
 // Polimorfismo de Query
 func Query(query string, args ...any) (*sql.Rows, error) {
+	Connect()
 	rows, err := db.Query(query, args...)
+	Close()
 	if err != nil {
 		log.Println("Error: ", err)
 	}

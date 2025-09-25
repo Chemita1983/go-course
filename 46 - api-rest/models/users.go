@@ -44,62 +44,56 @@ func CreateUser(username, password, email string) *User {
 }
 
 // Obtenemos todos los usuarios
-func ListUsers() Users {
+func ListUsers() (Users, error) {
 
 	query := "SELECT id, username, password, email from users"
-	rows, err := db.Query(query)
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	users := Users{}
+	if rows, err := db.Query(query); err != nil {
+		return nil, err
+	} else {
 
-	for rows.Next() {
-		user := User{}
-		var valueEmail sql.NullString // Para valores nulos
+		for rows.Next() {
+			user := User{}
+			var valueEmail sql.NullString // Para valores nulos
 
-		err := rows.Scan(&user.Id, &user.Username, &user.Password, &valueEmail)
-		if err != nil {
-			log.Println(err)
+			err := rows.Scan(&user.Id, &user.Username, &user.Password, &valueEmail)
+			if err != nil {
+				log.Println(err)
+			}
+
+			if valueEmail.Valid {
+				user.Email = valueEmail.String
+			} else {
+				user.Email = "NONE"
+			}
+
+			users = append(users, user)
 		}
 
-		if valueEmail.Valid {
-			user.Email = valueEmail.String
-		} else {
-			user.Email = "NONE"
-		}
-
-		users = append(users, user)
+		return users, nil
 	}
-
-	return users
 }
 
-func GetUserById(id int) *User {
+func GetUserById(id int) (*User, error) {
 	query := "SELECT id, username, password, email FROM users WHERE id=?"
-	rows, err := db.Query(query, id)
-	if err != nil {
-		log.Println(err)
-	}
-
 	user := newUser("", "", "")
 
-	for rows.Next() {
-		var valueEmail sql.NullString // Para valores nulos
+	if rows, err := db.Query(query, id); err != nil {
+		return nil, err
+	} else {
+		for rows.Next() {
+			var valueEmail sql.NullString // Para valores nulos
 
-		err := rows.Scan(&user.Id, &user.Username, &user.Password, &valueEmail)
-		if err != nil {
-			log.Println(err)
-		}
+			rows.Scan(&user.Id, &user.Username, &user.Password, &valueEmail)
 
-		if valueEmail.Valid {
-			user.Email = valueEmail.String
-		} else {
-			user.Email = "NONE"
+			if valueEmail.Valid {
+				user.Email = valueEmail.String
+			} else {
+				user.Email = "NONE"
+			}
 		}
+		return user, nil
 	}
-
-	return user
 }
 
 func (user *User) Delete() {
