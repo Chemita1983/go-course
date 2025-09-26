@@ -12,8 +12,7 @@ import (
 
 var db *sql.DB
 
-func Connect() error {
-	// Abrir una conexion de BBDD
+func connect() error {
 	connection, err := sql.Open("mysql", getDBConnection())
 	if err != nil {
 		log.Fatal(err)
@@ -24,7 +23,7 @@ func Connect() error {
 	return nil
 }
 
-func Close() {
+func close() {
 	db.Close()
 }
 
@@ -61,11 +60,11 @@ func TruncateTable(tableName string) {
 	}
 }
 
-// Polimorfismo de Exec
+// Función Wrapper de Exec
 func Exec(query string, args ...any) (sql.Result, error) {
-	Connect()
+	connect()
 	result, err := db.Exec(query, args...)
-	Close()
+	close()
 	if err != nil {
 		log.Println("Error: ", err)
 	}
@@ -73,11 +72,11 @@ func Exec(query string, args ...any) (sql.Result, error) {
 	return result, err
 }
 
-// Polimorfismo de Query
+// Función Wrapper de Query
 func Query(query string, args ...any) (*sql.Rows, error) {
-	Connect()
+	connect()
 	rows, err := db.Query(query, args...)
-	Close()
+	close()
 	if err != nil {
 		log.Println("Error: ", err)
 	}
